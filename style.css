@@ -1,0 +1,17 @@
+code {
+	background: lightgrey;
+}
+
+.test {
+	padding: 5px;
+	color: white;
+}
+.pass {
+	background: green;
+	width: 100px;
+	text-align: center;
+}
+.fail code {
+	background: red;
+	padding: 5px;
+}
