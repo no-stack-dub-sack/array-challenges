@@ -5,8 +5,6 @@ const seed = document.getElementById('challenge-seed');
 const solution = document.getElementById('challenge-solution');
 const title = document.getElementById('challenge-title');
 
-
-// Challenge 2:
 // Challenge 3:
 title.innerHTML = 'Remove items from an array with  `pop` and `shift`';
 
