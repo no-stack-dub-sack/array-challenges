@@ -1,7 +1,7 @@
 ### Arrays:
-- [ x ] Use an array to store a collection of data
-- [ x ] Add items to an array with `push` and `unshift`
-- [ x ] Remove items from an array with  `pop` and `shift`
+- [x] Use an array to store a collection of data
+- [x] Add items to an array with `push` and `unshift`
+- [x] Remove items from an array with  `pop` and `shift`
 - [ ] Remove an item using `splice`
 - [ ] Copy an array with `slice`
 - [ ] Copy an array with spread syntax
