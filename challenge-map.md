@@ -6,6 +6,8 @@
 - [x] Copy an array with `slice`
 - [x] Remove items using `splice`
 - [x] Add items using `splice()`
+- [x] Remove items using `splice`
+- [ ] Add items using `splice()`
 - [ ] Copy an array with `slice()`
 - [ ] Copy an array with spread syntax
 - [ ] Check for the presence of an item with `indexOf()`

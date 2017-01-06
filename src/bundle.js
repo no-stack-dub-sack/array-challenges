@@ -51,84 +51,51 @@
 	const solution = document.getElementById('challenge-solution');
 	const title = document.getElementById('challenge-title');
 
-
-	// Challenge 2:
-	// Challenge 3:
-	title.innerHTML = 'Remove items from an array with  `pop` and `shift`';
-
+	title.innerHTML = 'Copy an array with <code>slice()</code>';
 	text.innerHTML = `
-	<strong>Description:</strong>
-	Both <code>push()</code> and <code>unshift()</code> have corresponding methods that are nearly functional opposites: <code>pop()</code> and 
-	<code>shift()</code>. As you may have guessed by now, instead of adding, <code>pop()</code> <em>removes</em> an element from the end of an array, while <code>shift()</code> 
-	removes an element from the beginning. The key difference between <code>pop()</code> and <code>shift()</code> and their cousins <code>push()</code> and 
-	<code>unshift()</code>, is that neither method takes parameters, and each only allows an array to be modified by a single element at a time.<br><br>
+	<strong>Description:</strong> The next method we will cover is <code>slice()</code>. <code>slice()</code>, rather than modifying an array, copies, or <em>extracts</em>, 
+	a given mumber of elements to a new array object, leaving the array it is called upon untouched. <code>slice()</code> takes only 2 parameters &mdash; the first 
+	is the index at which to begin extraction, and the second is the index at which to stop extraction (extraction will occur up to, but not including
+	the element at this index). Consider this:
 
-	Let's take a look: <br><br>
+	<pre><code>
+	const weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];
+	const todaysWeather = weatherConditions.slice(1, 3);
+	// todaysWeather equals ['snow', 'sleet'];
+	// weatherConditions still equals ['rain', 'snow', 'sleet', 'hail', 'clear']
+	</code></pre> <br>
 
-	<code>
-	let greetings = ['whats up?', 'hello', 'see ya!'];<br>
-	greetings.pop() // now equals ['whats up?', 'hello']<br>
-	greetings.shift() // now equals ['hello']
-	</code><br><br>
+	In effect, we have created a new array by extracting elements from an existing array.<br><br>
 
-	We can also return the value of the removed element with either method like this:<br><br>
+	<strong>Instructions:</strong> `;
 
-	<code>const popped = greetings.pop(); // returns 'hello'<br>
-	// greetings now equals []</code>
+	seed.innerHTML = `
+	var forecast = (arr) => {
+		// write code below this line
 
-	<br><br>
+		return arr;
+	}`;
 
-	<strong>Instructions:</strong> Use <code>pop()</code> and <code>shift()</code> to remove the first and last element of the <code>popShift</code> array, and assign the removed
-	elements to their corresponding variables, <code>popped</code> and <code>shifted</code>.`;
-
-	seed.innerHTML = `let popShift = ['this', 'sentence', 'is', 'finished'];<br>
-	const popped = // write code here <br>
-	const shifted = // write code here 
+	solution.innerHTML = `
+	var forecast = (arr) => {
+		return arr.slice(2, 4);
+	}
 	`;
 
-	solution.innerHTML = `const popShift = ['this', 'sentence', 'is', 'finished'];<br>
-	const popped = popShift.pop();<br>
-	const shifted = popShift.shift();`;
+	var forecast = (arr) => {
+		return arr.slice(2, 4);
+	}
 
-
-
-	let popShift = ['this', 'sentence', 'is', 'finished'];
-	const popped = popShift.pop();
-	const shifted = popShift.shift();
-	console.log(popShift, popped, shifted)
+	forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']);
+	console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']))
 
 	try {
-		assert.deepEqual(popShift, ['sentence', 'is'], "<code>popShift</code> should now equal <code>['sentence', 'is']</code>.");
-		assert.strictEqual(popped, 'finished', "<code>popped</code> should equal <code>'finished'</code>.");
-		assert.strictEqual(shifted, 'this', "<code>shifted</code> should equal <code>'this'</code>.");
+		assert.deepEqual(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']), ['warm', 'sunny'], "<code>forecast</code> should return <code>['warm', 'sunny'].");
+		assert(forecast.toString().search(/\.slice\(/) !== -1, "The <code>forecast</code> function should utilize the <code>slice()</code> method.");
 		passing.innerHTML = `<div class="test pass">Tests Pass!</div>`;
 	} catch (err) {
 		passing.innerHTML = `<div class="test fail"><code>${err}</code></div>`;
 	}
-
-	// title.innerHTML = '';
-	// text.innerHTML = `
-	// <strong>Description:</strong> <br><br>
-
-	// <strong>Instructions:</strong> `;
-
-	// seed.innerHTML = `;`;
-
-	// solution.innerHTML = `;`;
-
-
-	// console.log()
-
-	// try {
-		
-	// 	passing.innerHTML = `<div class="test pass">Tests Pass!</div>`;
-	// } catch (err) {
-	// 	passing.innerHTML = `<div class="test fail"><code>${err}</code></div>`;
-	// }
-
-
-
-
 
 /***/ },
 /* 1 */

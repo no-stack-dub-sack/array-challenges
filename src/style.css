@@ -2,6 +2,10 @@ code {
 	background: lightgrey;
 }
 
+pre {
+	background: lightgrey;
+}
+
 .test {
 	padding: 5px;
 	color: white;
