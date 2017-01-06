@@ -17,6 +17,7 @@ Both methods take one or more elements as <em>parameters</em> and add those elem
 method adds elements to the end of an array, and <code>unshift()</code> adds elements to the beginning. Consider the following: <br><br>
 
 <pre><code>
+<<<<<<< ee6882e8728a4965e006261d71b0a2155bf29c6b
 const twentyThree = 'XXIII';
 
 let romanNumerals = ['XXI', 'XXII'];
@@ -26,6 +27,17 @@ romanNumerals.unshift('XIX', 'XX');
 
 romanNumerals.push(twentyThree); 
 // now equals ['XIX', 'XX', 'XXI', 'XXII', 'XXIII']
+=======
+const green = 'Iguana Green';
+
+let colorScheme = ['Island Indigo', 'Khaki'];
+
+colorScheme.unshift('Yankees Blue', 'Sky Blue'); 
+// now equals ['Yankees Blue', 'Sky Blue', 'Island Indigo', 'Khaki']
+
+colorScheme.push(green); 
+// now equals ['Yankees Blue', 'Sky Blue', 'Island Indigo', 'Khaki', 'Iguana Green']
+>>>>>>> additional challenges
 </code></pre>
 <br>
 
