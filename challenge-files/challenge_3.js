@@ -43,8 +43,8 @@ the removed elements to their corresponding variables, so that the returned arra
 
 seed.innerHTML = `
 var popShift = (arr) => {
-	const popped = // write code here
-	const shifted = // write code here
+	const popped = // change code here
+	const shifted = // change code here
 	return [shifted, popped];
 }
 

@@ -19,15 +19,14 @@ The below is an example of a valid array, notice it contains booleans, strings, 
 
 <code>const myArray = [undefined, null, true, false, 'one', 2, "III", {'four': 5}, [6, 'seven', 8]];</code><br><br>
 
-JavaScript arrays have many built in <em>methods</em> which allow us to access, traverse, and mutate arrays as needed, depending on our purpose. Array 
-methods are inherited through the <code>Array.prototype</code> property, which also allows us to create custom methods and properties for arrays. 
-We will discuss several of JavaScripts built in array methods in the coming challenges, but for a comprehensive list, and to learn more about
-<codw>Array.prototype</codw>, vist <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">this link</a>.<br><br>
+JavaScript offers many built in <em>methods</em> which allow us to access, traverse, and mutate arrays as needed, depending on our purpose.
+In the coming challenges, we will discuss several of the most common and useful methods, and a few other key techniques,
+that will help us to better understand and utilize arrays as data structures in JavaScript.<br><br>
 
 <strong>Instructions:</strong> In the editor, we have defined a variable called <code>yourArray</code>; complete the declaration by defining an array of at least 5 elements in length.
 Your array should contain at least one string, one number, and one boolean.`;
 
-seed.innerHTML = 'const yourArray = // write code here;';
+seed.innerHTML = 'const yourArray = // change code here;';
 
 solution.innerHTML = `const yourArray = [true, false, 'one', 2, 'III'];`;
 

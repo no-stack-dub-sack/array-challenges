@@ -50,9 +50,9 @@ function by using <code>push()</code> and <code>shift()</code> to add <code>'I',
 
 seed.innerHTML = `
 var mixedNumbers = (arr) => {
-	// write code below this line
+	// change code below this line
 
-	// write code above this line
+	// change code above this line
 	return arr;
 }
 

@@ -26,8 +26,8 @@ In effect, we have created a new array by extracting elements from an existing a
 
 seed.innerHTML = `
 var forecast = (arr) => {
-	// write code below this line
-
+	// change code below this line
+	
 	return arr;
 }`;
 

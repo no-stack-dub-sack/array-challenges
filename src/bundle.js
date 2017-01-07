@@ -51,47 +51,59 @@
 	const solution = document.getElementById('challenge-solution');
 	const title = document.getElementById('challenge-title');
 
-	title.innerHTML = 'Copy an array with <code>slice()</code>';
+	title.innerHTML = 'Create nested arrays';
 	text.innerHTML = `
-	<strong>Description:</strong> The next method we will cover is <code>slice()</code>. <code>slice()</code>, rather than modifying an array, copies, or <em>extracts</em>, 
-	a given mumber of elements to a new array object, leaving the array it is called upon untouched. <code>slice()</code> takes only 2 parameters &mdash; the first 
-	is the index at which to begin extraction, and the second is the index at which to stop extraction (extraction will occur up to, but not including
-	the element at this index). Consider this:
+	<strong>Description:</strong> One of the most powerful feature when thinking of arrays as data structures, is that arrays can even contain, 
+	or be completely made up of other arrays. In this way, an array can very quickly become very complex data structure, containing an infinite
+	depth of arrays that contain other arrays. Consider this, for example:
 
 	<pre><code>
-	const weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];
-	const todaysWeather = weatherConditions.slice(1, 3);
-	// todaysWeather equals ['snow', 'sleet'];
-	// weatherConditions still equals ['rain', 'snow', 'sleet', 'hail', 'clear']
-	</code></pre> <br>
+	let nestedArray = [ 
+		['deep'], // an array within an array, 2 levels of depth
+		[ 
+			['deeper'], ['deeper'] // 2 arrays nested 3 levels deep
+		], 
+		[ 
+			[ 
+				['deepest'], ['deepest'] // 2 arrays nested 4 levels deep 
+			], 
+			[ 
+				[
+					['deepest-est?'] // an array nested 5 levels deep
+				] 
+			]
+		], 
+	];
+	</code></pre>
 
-	In effect, we have created a new array by extracting elements from an existing array.<br><br>
+	While this example may seem convoluted, this type of complex data structure is not unheard of when dealing with large amounts of data. However, we 
+	can still very easily access the deepest levels of an array this complex with bracket notation:
+
+	<pre><code>
+	console.log(nestedArray[2][1][0][0][0]);
+	logs 'deepest-est?'
+	</code></pre>
+
+	And now that we know where that piece of data is, we can reset it if we need too:
+
+	<pre><code>
+	nestedArray[2][1][0][0][0] = 'deeper still';
+
+	console.log(nestedArray[2][1][0][0][0]);
+	now logs 'deeper still'
+	</code></pre>
+
+	<br><br>
 
 	<strong>Instructions:</strong> `;
 
-	seed.innerHTML = `
-	var forecast = (arr) => {
-		// write code below this line
+	seed.innerHTML = `;`;
 
-		return arr;
-	}`;
+	solution.innerHTML = `;`;
 
-	solution.innerHTML = `
-	var forecast = (arr) => {
-		return arr.slice(2, 4);
-	}
-	`;
-
-	var forecast = (arr) => {
-		return arr.slice(2, 4);
-	}
-
-	forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']);
-	console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']))
 
 	try {
-		assert.deepEqual(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']), ['warm', 'sunny'], "<code>forecast</code> should return <code>['warm', 'sunny'].");
-		assert(forecast.toString().search(/\.slice\(/) !== -1, "The <code>forecast</code> function should utilize the <code>slice()</code> method.");
+		
 		passing.innerHTML = `<div class="test pass">Tests Pass!</div>`;
 	} catch (err) {
 		passing.innerHTML = `<div class="test fail"><code>${err}</code></div>`;

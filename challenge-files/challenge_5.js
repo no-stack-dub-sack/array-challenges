@@ -34,9 +34,9 @@ using <code>splice()</code> to remove the first two elements of the array and ad
 
 seed.innerHTML = `
 var htmlColorNames = (arr) => {
-	// write code below this line
+	// change code below this line
 
-	// write code above this line
+	// change code above this line
 	return arr;
 } 
 
