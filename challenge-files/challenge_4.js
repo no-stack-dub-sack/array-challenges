@@ -1,9 +1,9 @@
-const assert = require('assert');
-const passing = document.getElementById('result');
-const text = document.getElementById('challenge-text');
-const seed = document.getElementById('challenge-seed');
-const solution = document.getElementById('challenge-solution');
-const title = document.getElementById('challenge-title');
+let assert = require('assert');
+let passing = document.getElementById('result');
+let text = document.getElementById('challenge-text');
+let seed = document.getElementById('challenge-seed');
+let solution = document.getElementById('challenge-solution');
+let title = document.getElementById('challenge-title');
 
 // Challenge 4: 
 title.innerHTML = 'Remove items using `splice()`';
@@ -19,7 +19,7 @@ the first element of an array, we would use <code>0</code>. <code>splice()</code
 elements, while the second parameter indicates the number of elements to delete. For example: <br>
 
 <pre><code>
-const array = ['today', 'was', 'not', 'so', 'great'];
+let array = ['today', 'was', 'not', 'so', 'great'];
 array.splice(2, 2); 
 // indicates that splice() should remove 2 elements beginning with the 3rd element
 // array now equals ['today', 'was', 'great']
@@ -29,8 +29,8 @@ array.splice(2, 2);
 example: 
 
 <pre><code>
-const array = ['today', 'was', 'not', 'so', 'great'];
-const newArray = array.splice(3, 2); 
+let array = ['today', 'was', 'not', 'so', 'great'];
+let newArray = array.splice(3, 2); 
 // newArray equals ['so', 'great']
 </code></pre>
 
@@ -40,7 +40,7 @@ const newArray = array.splice(3, 2);
 elements. Modify the function, using <code>splice()</code>, so that it returns a value of <code>10</code>.`;
 
 seed.innerHTML = `
-var sumOfTen = (arr) => {
+function sumOfTen(arr) {
 	// change code below this line
 
 	// change code above this line
@@ -51,15 +51,13 @@ sumOfTen([2, 5, 1, 5, 2, 1]);
 `;
 
 solution.innerHTML = `
-var sumOfTen = (arr) => {
+function sumOfTen(arr) {
 	arr.splice(1, 2);
 	return arr.reduce((a, b) => a + b);
 }
-
-sumOfTen([2, 5, 1, 5, 2, 1]);
 `;
 
-var sumOfTen = (arr) => {
+function sumOfTen(arr) {
 	arr.splice(1, 2);
 	return arr.reduce((a, b) => a + b);
 }
@@ -68,7 +66,7 @@ sumOfTen([2, 5, 1, 5, 2, 1]);
 
 try {
 	assert.strictEqual(sumOfTen([2, 5, 1, 5, 2, 1]), 10, "<code>sumOfTen</code> should return 10.");
-	assert(sumOfTen.toString().search(/\.splice\(/) !== -1, "The <code>sumOfTen</code> function should utilize the <code>splice()</code> method.")
+	assert.notStrictEqual(sumOfTen.toString().search(/\.splice\(/), -1, "The <code>sumOfTen</code> function should utilize the <code>splice()</code> method.")
 	passing.innerHTML = `<div class="test pass">Tests Pass!</div>`;
 } catch (err) {
 	passing.innerHTML = `<div class="test fail"><code>${err}</code></div>`;

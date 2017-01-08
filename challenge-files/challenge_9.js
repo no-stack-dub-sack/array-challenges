@@ -44,6 +44,8 @@ function filteredArray(arr, num) {
 
 	return arr;
 }
+
+filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3);
 `;
 
 solution.innerHTML = `
@@ -69,8 +71,6 @@ function filteredArray(arr, num) {
 }
 
 filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3);
-
-console.log(filteredArray([['amy', 'beth', 'sam'], ['dave', 'sean', 'peter']], 'peter'))
 
 try {
 	assert.deepEqual(filteredArray([ [10, 8, 3], [14, 6, 23], [3, 18, 6] ], 18), [[10, 8, 3], [14, 6, 23]], "<code>filteredArray([[10, 8, 3], [14, 6, 23], [3, 18, 6]], 18)</code> should return <code>[[10, 8, 3], [14, 6, 23]]</code>");

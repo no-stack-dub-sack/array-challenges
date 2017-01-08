@@ -15,7 +15,7 @@ it returns the position, or index, of that element, or <code>-1</code> if the el
 For example:
 
 <pre><code>
-const fruits = ['apples', 'pears', 'oranges', 'peaches', 'pears'];
+let fruits = ['apples', 'pears', 'oranges', 'peaches', 'pears'];
 fruits.indexOf('dates') // returns -1
 fruits.indexOf('oranges') // returns 2
 fruits.indexOf('pears') // returns 1, the first index at which the element exists

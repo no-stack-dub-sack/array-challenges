@@ -5,7 +5,7 @@ const seed = document.getElementById('challenge-seed');
 const solution = document.getElementById('challenge-solution');
 const title = document.getElementById('challenge-title');
 
-title.innerHTML = 'Add items using `<code>splice()</code>`';
+title.innerHTML = 'Add items using `splice()`';
 text.innerHTML = `
 <strong>Description:</strong> Remember in the last challenge we mentioned that <code>splice()</code> can take up to three parameters? Well, we can go
 one step further with <code>splice()</code> &mdash; in addition to removing elements, we can use that third parameter, which represents one or more elements, to <em>add</em> them as well. 
@@ -13,7 +13,7 @@ This can be incredibly useful for quickly switching out an element, or a set of 
 a color scheme for a set of DOM elements in an array, and want to dynamically change a color based on some action:<br><br>
 
 <pre><code>
-var colorChange = (arr, index, newColor) => {
+function colorChange(arr, index, newColor) {
 	arr.splice(index, 1, newColor);
 	return arr;
 } 
@@ -33,7 +33,7 @@ utilizing <code>splice()</code> to its maximum potential can have.<br><br>
 using <code>splice()</code> to remove the first two elements of the array and add <code>'DarkSalmon'</code> and <code>'BlanchedAlmond'</code> in their respective places.<br>`;
 
 seed.innerHTML = `
-var htmlColorNames = (arr) => {
+function htmlColorNames(arr) {
 	// change code below this line
 
 	// change code above this line
@@ -44,15 +44,13 @@ htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurqoise', 
 `;
 
 solution.innerHTML = `
-var htmlColorNames = (arr) => {
+function htmlColorNames(arr) {
 	arr.splice(0, 2, 'DarkSalmon', 'BlanchedAlmond');
 	return arr;
 } 
-
-htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurqoise', 'FireBrick']);
 `;
 
-var htmlColorNames = (arr) => {
+function htmlColorNames(arr) {
 	arr.splice(0, 2, 'DarkSalmon', 'BlanchedAlmond');
 	return arr;
 } 
@@ -62,7 +60,7 @@ htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurqoise', 
 
 try {
 	assert.deepEqual(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurqoise', 'FireBrick']), ['DarkSalmon', 'BlanchedAlmond', 'LavenderBlush', 'PaleTurqoise', 'FireBrick'], "<code>htmlColorNames</code> should return ['DarkSalmon', 'BlanchedAlmond', 'LavenderBlush', 'PaleTurqoise', 'FireBrick']");
-	assert(htmlColorNames.toString().search(/\.splice\(/) !== -1, "The <code>htmlColorNames</code> function should utilize the <code>splice()</code> method.")
+	assert.notStrictEqual(htmlColorNames.toString().search(/\.splice\(/), -1, "The <code>htmlColorNames</code> function should utilize the <code>splice()</code> method.")
 	passing.innerHTML = `<div class="test pass">Tests Pass!</div>`;
 } catch (err) {
 	passing.innerHTML = `<div class="test fail"><code>${err}</code></div>`;

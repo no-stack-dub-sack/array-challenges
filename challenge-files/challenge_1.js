@@ -1,9 +1,9 @@
-const assert = require('assert');
-const passing = document.getElementById('result');
-const text = document.getElementById('challenge-text');
-const seed = document.getElementById('challenge-seed');
-const solution = document.getElementById('challenge-solution');
-const title = document.getElementById('challenge-title');
+let assert = require('assert');
+let passing = document.getElementById('result');
+let text = document.getElementById('challenge-text');
+let seed = document.getElementById('challenge-seed');
+let solution = document.getElementById('challenge-solution');
+let title = document.getElementById('challenge-title');
 
 // Challenge 1: Use an array to store a collection of data
 title.innerHTML = 'Use an array to store a collection of data';
@@ -15,9 +15,9 @@ Objects and Arrays, it is important to note that technically, an <strong>array</
 Arrays can store any type of data supported by JavaScript, and while they are a simple and basic form of data structure, they can also be 
 very complex and powerful - all of which depends on how the programmer utilizes them.
 
-The below is an example of a valid array, notice it contains booleans, strings, numbers, arrays, and objects, among other valid data types: <br><br>
+The below is an example of a valid array, notice it contains booleans, strings, numbers, other arrays (this is called a nested, or multi-dimensional array), and objects, among other valid data types: <br><br>
 
-<code>const myArray = [undefined, null, true, false, 'one', 2, "III", {'four': 5}, [6, 'seven', 8]];</code><br><br>
+<code>let myArray = [undefined, null, true, false, 'one', 2, "III", {'four': 5}, [6, 'seven', 8]];</code><br><br>
 
 JavaScript offers many built in <em>methods</em> which allow us to access, traverse, and mutate arrays as needed, depending on our purpose.
 In the coming challenges, we will discuss several of the most common and useful methods, and a few other key techniques,
@@ -26,11 +26,11 @@ that will help us to better understand and utilize arrays as data structures in 
 <strong>Instructions:</strong> In the editor, we have defined a variable called <code>yourArray</code>; complete the declaration by defining an array of at least 5 elements in length.
 Your array should contain at least one string, one number, and one boolean.`;
 
-seed.innerHTML = 'const yourArray = // change code here;';
+seed.innerHTML = 'let yourArray = // change code here;';
 
-solution.innerHTML = `const yourArray = [true, false, 'one', 2, 'III'];`;
+solution.innerHTML = `let yourArray = [true, false, 'one', 2, 'III'];`;
 
-const yourArray = [true, false, 'one', 2, 'III'];
+let yourArray = [true, false, 'one', 2, 'III'];
 
 try {
 	assert.strictEqual(Array.isArray(yourArray), true, 'yourArray is an array.');

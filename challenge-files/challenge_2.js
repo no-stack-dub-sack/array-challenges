@@ -17,8 +17,7 @@ Both methods take one or more elements as <em>parameters</em> and add those elem
 method adds elements to the end of an array, and <code>unshift()</code> adds elements to the beginning. Consider the following: <br><br>
 
 <pre><code>
-<<<<<<< ee6882e8728a4965e006261d71b0a2155bf29c6b
-const twentyThree = 'XXIII';
+let twentyThree = 'XXIII';
 
 let romanNumerals = ['XXI', 'XXII'];
 
@@ -27,17 +26,6 @@ romanNumerals.unshift('XIX', 'XX');
 
 romanNumerals.push(twentyThree); 
 // now equals ['XIX', 'XX', 'XXI', 'XXII', 'XXIII']
-=======
-const green = 'Iguana Green';
-
-let colorScheme = ['Island Indigo', 'Khaki'];
-
-colorScheme.unshift('Yankees Blue', 'Sky Blue'); 
-// now equals ['Yankees Blue', 'Sky Blue', 'Island Indigo', 'Khaki']
-
-colorScheme.push(green); 
-// now equals ['Yankees Blue', 'Sky Blue', 'Island Indigo', 'Khaki', 'Iguana Green']
->>>>>>> additional challenges
 </code></pre>
 <br>
 
@@ -49,7 +37,7 @@ function by using <code>push()</code> and <code>shift()</code> to add <code>'I',
 <code>7, 'VIII', '9'</code> to the end so that the returned array contains representations of the numbers 1-9 in order.`;
 
 seed.innerHTML = `
-var mixedNumbers = (arr) => {
+function mixedNumbers(arr) {
 	// change code below this line
 
 	// change code above this line
@@ -60,7 +48,7 @@ mixedNumbers(['IV', 5, 'six'])
 `;
 
 solution.innerHTML = `
-var mixedNumbers = (arr) => {
+function mixedNumbers(arr) {
 	arr.push(7, 'VIII', '9');
 	arr.unshift('I', 2, 'three');
 	return arr;
@@ -69,7 +57,7 @@ var mixedNumbers = (arr) => {
 mixedNumbers(['IV', 5, 'six']);
 `;
 
-var mixedNumbers = (arr) => {
+function mixedNumbers(arr) {
 	arr.push(7, 'VIII', '9');
 	arr.unshift('I', 2, 'three');
 	return arr;
@@ -79,8 +67,8 @@ mixedNumbers(['IV', 5, 'six']);
 
 try {
 	assert.deepEqual(mixedNumbers(['IV', 5, 'six']), ['I', 2, 'three', 'IV', 5, 'six', 7, 'VIII', '9'], "<code>mixedNumbers(['IV', 5, 'six'])</code> should now return <code>['I', 2, 'three', 'IV', 5, 'six', 7, 'VIII', '9']</code>");
-	assert(mixedNumbers.toString().search(/\.push\(/) !== -1, "The <code>mixedNumbers</code> function should utilize the <code>push()</code> method."); 
-	assert(mixedNumbers.toString().search(/\.unshift\(/) !== -1, "The <code>mixedNumbers</code> function should utilize the <code>unshift()</code> method."); 
+	assert.notStrictEqual(mixedNumbers.toString().search(/\.push\(/), -1, "The <code>mixedNumbers</code> function should utilize the <code>push()</code> method."); 
+	assert.notStrictEqual(mixedNumbers.toString().search(/\.unshift\(/), -1, "The <code>mixedNumbers</code> function should utilize the <code>unshift()</code> method."); 
 	passing.innerHTML = `<div class="test pass">Tests Pass!</div>`;
 } catch (err) {
 	passing.innerHTML = `<div class="test fail"><code>${err}</code></div>`;

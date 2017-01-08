@@ -14,8 +14,8 @@ spread syntax simply looks like this: <code>...</code><br><br>
 In practice, we can use the spread syntax to copy an array like so:<br>
 
 <pre><code>
-const thisArray = [true, true, undefined, false, null];
-const thatArray = [...thisArray];
+let thisArray = [true, true, undefined, false, null];
+let thatArray = [...thisArray];
 // thatArray equals [true, true, undefined, false, null]
 // thisArray remains unchanged, and is identical to thatArray
 </code></pre>
@@ -51,7 +51,7 @@ function copyMachine(arr, num) {
 }
 `;
 
-var copyMachine = (arr, num) => {
+function copyMachine(arr, num) {
 	let newArr = [];
 	while (num >= 1) {
 		newArr.push([...arr]);

@@ -30,7 +30,7 @@ greetings.shift()
 We can also return the value of the removed element with either method like this:<br><br>
 
 <pre><code>
-const popped = greetings.pop(); 
+let popped = greetings.pop(); 
 // returns 'hello'
 // greetings now equals []
 </code></pre>
@@ -42,9 +42,9 @@ Modify the function, using <code>pop()</code> and <code>shift()</code>, to remov
 the removed elements to their corresponding variables, so that the returned array contains their values.`;
 
 seed.innerHTML = `
-var popShift = (arr) => {
-	const popped = // change code here
-	const shifted = // change code here
+function popShift(arr) {
+	let popped = // change code here
+	let shifted = // change code here
 	return [shifted, popped];
 }
 
@@ -52,19 +52,17 @@ popShift(['challenge', 'is', 'not', 'complete']);
 `;
 
 solution.innerHTML = `
-var popShift = (arr) => {
-	const popped = arr.pop();
-	const shifted = arr.shift();
+function popShift(arr) {
+	let popped = arr.pop();
+	let shifted = arr.shift();
 	return [shifted, popped];
 }
-
-popShift(['challenge', 'is', 'not', 'complete']);
 `;
 
 
-var popShift = (arr) => {
-	const popped = arr.pop();
-	const shifted = arr.shift();
+function popShift(arr) {
+	let popped = arr.pop();
+	let shifted = arr.shift();
 	return [shifted, popped];
 }
 
@@ -73,8 +71,8 @@ popShift(['challenge', 'is', 'not', 'complete']);
 
 try {
 	assert.deepEqual(popShift(['challenge', 'is', 'not', 'complete']), ['challenge', 'complete'], "<code>popShift(['challenge', 'is', 'not', 'complete'])</code> should return <code>['challenge', 'complete']</code>.");
-	assert(popShift.toString().search(/\.pop\(/) !== -1, "The <code>popShift</code> function should utilize the <code>pop()</code> method."); 
-	assert(popShift.toString().search(/\.shift\(/) !== -1, "The <code>popShift</code> function should utilize the <code>shift()</code> method."); 
+	assert.notStrictEqual(popShift.toString().search(/\.pop\(/), -1, "The <code>popShift</code> function should utilize the <code>pop()</code> method."); 
+	assert.notStrictEqual(popShift.toString().search(/\.shift\(/), -1, "The <code>popShift</code> function should utilize the <code>shift()</code> method."); 
 	passing.innerHTML = `<div class="test pass">Tests Pass!</div>`;
 } catch (err) {
 	passing.innerHTML = `<div class="test fail"><code>${err}</code></div>`;

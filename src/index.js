@@ -5,59 +5,38 @@ const seed = document.getElementById('challenge-seed');
 const solution = document.getElementById('challenge-solution');
 const title = document.getElementById('challenge-title');
 
-title.innerHTML = 'Create nested arrays';
+title.innerHTML = 'Combining arrays with spread syntax';
 text.innerHTML = `
-<strong>Description:</strong> One of the most powerful feature when thinking of arrays as data structures, is that arrays can even contain, 
-or be completely made up of other arrays. In this way, an array can very quickly become very complex data structure, containing an infinite
-depth of arrays that contain other arrays. Consider this, for example:
+Another huge advantage of the spread syntax, is the ability to combine arrays, or to insert all the elements of one array into another, at any index. With more traditional syntaxes, we can concatenate arrays, but this only allows us to combine arrays at the end of one, and at the start of another. Spread syntax makes the following operation extremely simple:
 
-<pre><code>
-let nestedArray = [ 
-	['deep'], // an array within an array, 2 levels of depth
-	[ 
-		['deeper'], ['deeper'] // 2 arrays nested 3 levels deep
-	], 
-	[ 
-		[ 
-			['deepest'], ['deepest'] // 2 arrays nested 4 levels deep 
-		], 
-		[ 
-			[
-				['deepest-est?'] // an array nested 5 levels deep
-			] 
-		]
-	], 
-];
-</code></pre>
+let thisArray = ['sage', 'rosemary', 'parsely', 'thyme'];
 
-While this example may seem convoluted, this type of complex data structure is not unheard of when dealing with large amounts of data. However, we 
-can still very easily access the deepest levels of an array this complex with bracket notation:
+let thatArray = ['basil', 'cilantro', ...thisArray, 'corriander'];
+// thatArray now equals ['basil', 'cilantro', 'sage', 'rosemary', 'parsely', 'thyme', 'corriander']
 
-<pre><code>
-console.log(nestedArray[2][1][0][0][0]);
-logs 'deepest-est?'
-</code></pre>
+Using spread syntax, we have just achieved an operation that would have been more more complex and more verbose had we used traditional methods.
 
-And now that we know where that piece of data is, we can reset it if we need too:
+<strong>Instructions:</strong> We have defined a function <code>spreadOut</code> that returns the variable <code>sentence</code>, modify the function using the spread syntax so that it returns the array <code>['learning', 'to', 'code', 'is', 'fun']</code>.`;
 
-<pre><code>
-nestedArray[2][1][0][0][0] = 'deeper still';
-
-console.log(nestedArray[2][1][0][0][0]);
-now logs 'deeper still'
-</code></pre>
-
-<br><br>
-
-<strong>Instructions:</strong> `;
-
-seed.innerHTML = `;`;
+function spreadOut() {
+	let fragment = ['to', 'code'];
+	let sentence = 'change code here'
+	return sentence;
+}
 
 solution.innerHTML = `;`;
 
+function spreadOut() {
+	let fragment = ['to', 'code'];
+	let sentence = ['learning', ...fragment, 'is', 'fun'];
+	return sentence;
+}
+
+console.log(spreadOut())
 
 try {
-	
+assert.deepEqual(spreadOut(), ['learning', 'to', 'code', 'is', 'fun'], "<code>spreadOut</code> should return <code>['learning', 'to', 'code', 'is', 'fun']</code>.");
+assert.notStrictEqual(spreadOut.toString().search(/\.\.\./), -1, "The <code>spreadOut</code> function should utilize the spread syntax.")
 	passing.innerHTML = `<div class="test pass">Tests Pass!</div>`;
 } catch (err) {
 	passing.innerHTML = `<div class="test fail"><code>${err}</code></div>`;
