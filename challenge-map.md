@@ -8,7 +8,8 @@
 - [x] Add items using `splice()`
 - [x] Remove items using `splice`
 - [x] Remove items using `splice`
-- [ ] Copy an array with spread syntax
-- [ ] Check for the presence of an item with `indexOf()`
-- [ ] Iterate through all the items in an array
-- [ ] Create a nested array
+- [x] Copy an array with spread syntax
+- [x] Check for the presence of an item with `indexOf()`
+- [x] Iterate through all the items in an array
+- [x] Create a nested array
+- [x] Combine arrays with spread syntax
