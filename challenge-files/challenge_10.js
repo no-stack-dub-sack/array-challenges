@@ -5,7 +5,7 @@ const seed = document.getElementById('challenge-seed');
 const solution = document.getElementById('challenge-solution');
 const title = document.getElementById('challenge-title');
 
-title.innerHTML = 'Create nested arrays';
+title.innerHTML = 'Create complex nested arrays';
 text.innerHTML = `
 <strong>Description:</strong> One of the most powerful features when thinking of arrays as data structures, is that arrays can contain, 
 or even be completely made up of other arrays. We have seen arrays that contain arrays in previous challenges, but fairly simple ones. 
